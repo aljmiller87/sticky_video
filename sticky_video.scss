@@ -1,0 +1,111 @@
+// 16:9 ratio
+.video-container {
+	position: relative;
+	width: 100%;
+	padding-top: 56.25%;
+	background-color: #f6f8f9;
+    @media screen and (min-width:768px) {
+        margin: 30px 0 25px;
+    }
+    iframe {
+		will-change: position, transform, opacity;
+    	position: absolute;
+	    height: 100%;
+	    width: 100%;
+	    bottom: 0;
+	    right: 0;
+	    top: auto;
+	    left: auto;
+	    margin: 0px;
+	    transition: width .5s ease, height .5s ease, transform .5s ease;
+	    transform: translate(0,0) scale(1);
+	    z-index: 50;
+    	&.move-right {
+    		&.is-playing {
+	            @media screen and (min-width: 481px) {
+	                will-change: position, transform, opacity;
+	                width: 400px !important;
+	                height: 224.762px !important;
+	                position: fixed;
+	                z-index: 50;
+	                bottom: 20px;
+	                right: 20px;
+	                transition: width .5s ease, height .5s ease, transform .5s ease;
+	                transform: translate(0, 0) scale(1);
+	            }
+	        }
+    	}
+    }
+    .close-button {
+    	opacity: 0;
+	    visibility: hidden;
+	    transition: opacity .3s ease,visibility .3s ease;
+	    width: 38px;
+	    height: 22px;
+	    background: #FFF;
+	    border: 1px solid #888;
+	    position: fixed;
+	    z-index: 99999;
+	    cursor: pointer;
+	    top: auto;
+	    bottom: auto;
+	    left: auto;
+	    right: auto;
+	    -moz-transition: all 2s;
+	    -webkit-transition: all 2s;
+	    transition: all 2s;
+        z-index: 50;
+	    &:before {
+	    	content: '';
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    height: 0;
+		    width: 0;
+		    opacity: 0;
+		    -moz-transition: all 1s;
+		    -webkit-transition: all 1s;
+		    transition: all 1s;
+	    }
+	    &:after {
+	    	content: '';
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    height: 0;
+		    width: 0;
+		    opacity: 0;
+		    -moz-transition: all 1s;
+		    -webkit-transition: all 1s;
+		    transition: all 1s;
+
+		    }
+	    &.visible {
+	    	&.is-playing {
+	    		@media screen and (min-width:481px) {
+	                border-bottom: 0px;
+	                bottom: 245px;
+	                right: 382px;
+	                display: block;
+	                opacity: 1;
+	                visibility: visible;
+
+	            }
+				&:before {
+					border: 8px solid #555;
+				    border-color: transparent transparent #5D5D5D transparent;
+				    margin-top: -13px;
+				    margin-left: -8px;
+				    opacity: 1;
+				}
+				&:after {
+					border: 6px solid #FFF;
+				    border-color: transparent transparent #FFF transparent;
+				    margin-top: -9px;
+				    margin-left: -6px;
+				    opacity: 1;
+				}
+	    	}	            
+		}
+	}
+}
