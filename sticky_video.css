@@ -22,13 +22,13 @@
     @media screen and (min-width: 481px) {
       .video-container iframe.move-right.is-playing {
         will-change: position, transform, opacity;
-        width: 400px !important;
+/*        width: 400px !important;
         height: 224.762px !important;
-        position: fixed;
+*/        position: fixed;
         z-index: 50;
-        bottom: 20px;
+/*        bottom: 20px;
         right: 20px;
-        transition: width .5s ease, height .5s ease, transform .5s ease;
+*/        transition: width .5s ease, height .5s ease, transform .5s ease;
         transform: translate(0, 0) scale(1); } }
   .video-container .close-button {
     opacity: 0;
@@ -74,9 +74,9 @@
     @media screen and (min-width: 481px) {
       .video-container .close-button.visible.is-playing {
         border-bottom: 0px;
-        bottom: 245px;
+/*        bottom: 245px;
         right: 382px;
-        display: block;
+*/        display: block;
         opacity: 1;
         visibility: visible; } }
     .video-container .close-button.visible.is-playing:before {
